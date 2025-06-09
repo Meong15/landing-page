@@ -294,75 +294,91 @@
         }
         
         .footer-content {
-            max-width: 1000px;
-            margin: auto;
+            max-width: 1100px;
+            margin: 0 auto;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            /* kiri - tengah - kanan */
             align-items: center;
-            gap: 30px;
-        }
-        
-        .footer-logo img {
-            width: 130px;
-            height: auto;
-        }
-        
-        .footer-links,
-        .footer-social {
-            display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            justify-content: center;
+        }
+        /* Sosial media di kiri */
+        
+        .footer-social {
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
         }
         
-        .footer-links a,
         .footer-social a {
             color: #eee;
             text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s ease;
         }
         
-        .footer-links a:hover,
         .footer-social a:hover {
-            color: #00e0a8;
+            color: #f9b234;
+        }
+        /* Logo di tengah */
+        
+        .footer-logo img {
+            max-width: 400PX;
+            height: auto;
+            object-fit: contain;
+        }
+        /* Navigasi di kanan */
+        
+        .footer-links {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            gap: 25px;
+            flex-wrap: wrap;
         }
         
-        .footer-social a {
-            font-size: 1.2rem;
+        .footer-links a {
+            color: #eee;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #f9b234;
         }
         
         .footer-bottom {
-            font-size: 0.85rem;
-            color: #ccc;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #aaa;
         }
         
         .mosque-icon {
-            font-size: 40px;
-            color: #fff;
-            opacity: 0.05;
             position: absolute;
-            bottom: 10px;
+            font-size: 3rem;
+            color: #333;
+            opacity: 0.15;
+            top: 10px;
         }
         
         .mosque-icon.left {
-            left: 20px;
+            left: 10px;
         }
         
         .mosque-icon.right {
-            right: 20px;
-        }
-        /* Responsif */
-        
-        @media (max-width: 768px) {
-            .footer-content {
-                gap: 20px;
-            }
-            .footer-links,
-            .footer-social {
-                flex-direction: column;
-                align-items: center;
-            }
+            right: 10px;
         }
         /* Animasi fadeInUp */
         
@@ -521,6 +537,10 @@
             color: #555;
             font-style: italic;
         }
+        
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 
@@ -528,16 +548,18 @@
     <!-- HEADER -->
     <header>
         <div class="header-container">
-            <div class="logo" tabindex="0" role="link" aria-label="Homepage">
-                <img src="logo.png" alt="Logo TQA" />
-                <h1>Training Qur'an Al Akbariyah</h1>
+            <div class="logo" tabindex="0" role="link" aria-label="Homepage" style="display: flex; align-items: center; gap: 10px;">
+                <img src="logo.png" alt="Logo TQA 2" style="height: 50px;" />
+                <h1 style="margin-left: 10px;">Training Qur'an Al Akbariyah</h1>
             </div>
+
             <nav aria-label="Primary navigation">
                 <ul>
                     <li><a href="#pengantar">Pengantar</a></li>
                     <li><a href="#visi-misi">Visi & Misi</a></li>
                     <li><a href="#program-utama">Program</a></li>
-                    <li><a href="#kontak">Kontak</a></li>
+                    <li><a href="#footer">Kontak</a></li>
+
                 </ul>
             </nav>
         </div>
@@ -547,15 +569,18 @@
         <div class="validation-container">
             <small class="validation-text">Tervalidasi oleh:</small>
             <div class="validation-logos">
+
+                <img src="mahir.png" alt="LPK Mahir Academy" class="validation-logo" title="LPK Mahir Academy Indonesia" />
                 <img src="kemnaker.png" alt="Kemnaker" class="validation-logo" title="Kemnaker" />
                 <img src="kominfo.png" alt="Kominfo/Komdigi" class="validation-logo" title="Kominfo/Komdigi" />
                 <img src="peruri.png" alt="Peruri" class="validation-logo" title="Peruri" />
                 <img src="pengayoman.png" alt="Pengayoman" class="validation-logo" title="Pengayoman" />
-                <img src="mahir.png" alt="LPK Mahir Academy" class="validation-logo" title="LPK Mahir Academy Indonesia" />
+
             </div>
         </div>
 
         <section id="pengantar">
+            <h2></h2>
             <p>Training Qur'an Al Akbariyah (TQA) adalah lembaga pendidikan internasional yang fokus pada pendidikan, pengembangan & pengajaran ilmu Al-Qur'an yang berada dibawah naungan Yayasan Al Akbar Centre Indonesia.</p>
             <p>TQA hadir dengan komitmen untuk melahirkan guru-guru Qur'an dalam menguasai Makharijul huruf, ilmu tajwid & Ghoribul Qur'an dengan mudah sehingga mampu melahirkan generasi Qur'an yang unggul baik di tingkat nasional maupun global.</p>
             <p>Kami menawarkan pembelajaran ilmu Qur'an secara online maupun offline yang berbasis metode Akbariyah dengan sistem cepat, mudah & menyenangkan. TQA mengkader para guru Qur'an secara sistematis yang didampingi langsung oleh penulis metode Akbariyah
@@ -614,18 +639,19 @@
                 <h2 class="barcode-title">Scan Barcode</h2>
                 <p class="barcode-desc">Gunakan barcode di bawah untuk mengecek keaslian sertifikat & melihat dokumentasi video kegiatan.</p>
 
-                <div class="barcode-grid">
-                    <div class="barcode-item">
-                        <img src="barcode-sertifikat.jpg" alt="Barcode Sertifikat" class="barcode-img" />
+                <div class="barcode-grid" style="display: flex; justify-content: center; gap: 40px;">
+                    <div class="barcode-item" style="text-align: center;">
+                        <img src="barcode-sertifikat.jpg" alt="Barcode Sertifikat" class="barcode-img" style="max-width: 200px; height: auto;" />
                         <p class="barcode-label">Validasi Sertifikat & Gelar Nasional</p>
                     </div>
-                    <div class="barcode-item">
-                        <img src="barcode-video.jpg" alt="Barcode Video" class="barcode-img" />
+                    <div class="barcode-item" style="text-align: center;">
+                        <img src="barcode-video.jpg" alt="Barcode Video" class="barcode-img" style="max-width: 200px; height: auto;" />
                         <p class="barcode-label">Lihat Video Kegiatan Training</p>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <section id="donasi" class="donasi-section">
             <div class="donasi-container">
@@ -648,74 +674,42 @@
             </div>
         </section>
 
-        <section class="kontak-section" id="kontak">
-            <div class="kontak-container">
-                <h2 class="kontak-title">Hubungi Kami</h2>
-                <p class="kontak-subtitle">Silakan hubungi kami melalui media sosial atau email berikut:</p>
 
-                <ul class="kontak-list">
-                    <li>
-                        <a href="https://wa.me/6285396936335" target="_blank">
-                            <i class="fab fa-whatsapp"></i> WhatsApp: 0853-9693-6335
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/AlAkbarCentre" target="_blank">
-                            <i class="fab fa-facebook"></i> Facebook: Al Akbar Centre
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/alakbarcentre" target="_blank">
-                            <i class="fab fa-instagram"></i> Instagram: @alakbarcentre
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.tiktok.com/@al.akbar.centre.i" target="_blank">
-                            <i class="fab fa-tiktok"></i> TikTok: @al.akbar.centre.i
-                        </a>
-                    </li>
-                    <li>
-                        <a href="mailto:alakbar.centre2024@gmail.com">
-                            <i class="fas fa-envelope"></i> Email: alakbar.centre2024@gmail.com
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
     </main>
-
-    <!-- FOOTER -->
-    <footer>
+    <footer id="footer">
         <div class="footer-content">
-            <!-- Logo -->
-            <div class="footer-logo">
-                <img src="logo.png" alt="Logo Yayasan Al Akbar" />
+            <div class="footer-social">
+                <a href="https://facebook.com/AlAkbarCentre" target="_blank">
+                    <i class="fab fa-facebook-f"></i> AlAkbarCentre
+                </a>
+                <a href="https://instagram.com/alakbarcentre" target="_blank">
+                    <i class="fab fa-instagram"></i> alakbarcentre
+                </a>
+                <a href="https://www.tiktok.com/@al.akbar.centre.i" target="_blank">
+                    <i class="fab fa-tiktok"></i> @al.akbar.centre.i
+                </a>
+                <a href="https://wa.me/6285396936335" target="_blank">
+                    <i class="fab fa-whatsapp"></i> 6285396936335
+                </a>
+                <a href="mailto:alakbar.centre2024@gmail.com">
+                    <i class="fas fa-envelope"></i> alakbar.centre2024@gmail.com
+                </a>
             </div>
 
+            <div class="footer-logo">
+                <img src="tpq-logo-lanscape.png" alt="Logo Yayasan Al Akbar" />
+            </div>
 
-            <!-- Navigasi Footer -->
             <div class="footer-links">
                 <a href="#pengantar"><i class="fas fa-home"></i> Beranda</a>
                 <a href="#visi-misi"><i class="fas fa-bullseye"></i> Visi Misi</a>
                 <a href="#program-utama"><i class="fas fa-book-open"></i> Program</a>
-                <a href="#kontak"><i class="fas fa-phone-alt"></i> Kontak</a>
                 <a href="#donasi"><i class="fas fa-hand-holding-heart"></i> Donasi</a>
             </div>
+        </div>
 
-            <!-- Sosial Media -->
-            <div class="footer-social">
-                <a href="https://facebook.com/AlAkbarCentre" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://instagram.com/alakbarcentre" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@al.akbar.centre.i" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://wa.me/6285396936335" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="mailto:alakbar.centre2024@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
-
-            <!-- Copyright -->
-            <div class="footer-bottom">
-                <p>© 2024 Yayasan Al Akbar Centre Indonesia - All rights reserved.</p>
-
-            </div>
+        <div class="footer-bottom">
+            <p>© 2024 Yayasan Al Akbar Centre Indonesia - All rights reserved.</p>
         </div>
 
         <i class="fas fa-mosque mosque-icon left"></i>
